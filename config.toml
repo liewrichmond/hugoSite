@@ -1,4 +1,4 @@
-baseURL = "http://example.org/"
+baseURL = "https://liewrichmond.github.io/"
 languageCode = "en-us"
 title = "Malaysian Sensation"
 theme = "anatole"
@@ -7,7 +7,7 @@ theme = "anatole"
 title = "Hi, I'm Richmond"
 author = "Richmond Liew"
 description = "I wanna be the very best like no one ever was..."
-profilePicture = "images/profile.jpg"
+profilePicture = "images/richmondProfile.png"
 
 [menu]
 

@@ -23,9 +23,6 @@ Digital Logic and Design and Computer Architecture were two of my favourite clas
 
 With the fundamentals laid out to me, I decided to try my hand at emulation and really putting my knowledge into practice. I did some digging and found that CHIP-8 was a really good starting to get in to emulation for beginners. I decided to use Typescript + React for this since I really wanted an easy way to distribute and showcase my project and I also thought the contrast of using a language so far abstracted from metal to implement a bare metal component was interesting.
 
-### Emuwhator?
-
-
 ### The Code
 As always, nothing makes me happier than a nice clean project structure. So in order to keep things neat, I decided to hide the main logic in a `resources/` folder and the rendering React stuff in a `components/` folder. `resources/` also kept a bunch of other assets like roms and such.
 ```bash
@@ -114,7 +111,7 @@ Almost all modern day computers are based off of the von Neumann architecture. T
         private memory: Uint8Array;
 ```
 
-The CHIP8 has about 4KB of memory (4096 bytes) but not all of it us accessible by programs. The first 512 bytes were initially reserved for the interpreter so anything after that would be program addressable memory. In our case, since, we don't need to store the interpreter in memory, not all of the 512 bytes would be used. The one thing that we do need to store in there, however, are some built in sprites. The CHIP8 had some default sprites/fonts stored in there and in case it was referenced somewhere, we wanted to make sure that it was there. I'm not going to go into too much detail about the sprites, but you can read about it [here]().
+The CHIP8 has about 4KB of memory (4096 bytes) but not all of it us accessible by programs. The first 512 bytes were initially reserved for the interpreter so anything after that would be program addressable memory. In our case, since, we don't need to store the interpreter in memory, not all of the 512 bytes would be used. The one thing that we do need to store in there, however, are some built in sprites. The CHIP8 had some default sprites/fonts stored in there and in case it was referenced somewhere, we wanted to make sure that it was there. I'm not going to go into too much detail about the sprites, but you can read about it [here](http://devernay.free.fr/hacks/chip8/C8TECH10.HTM#font).
 
 I wanted to ensure that the memory was in a known state upon initialization, so in the `Chip8` constructor
 ```ts
@@ -210,7 +207,7 @@ class CPU {
 ```
 
 #### Instructions
-At its core, the CPU is really just a glorified calculator waiting for people to tell it what to do. As such, we need a contract to tell the rest of the world what the CPU is capable of, and what you can ask of it. This is done through an `Instruction Set Architecture` commonly referred to as an `ISA`. It just defines some methods that you're allowed to tell the CPU do. CHIP8 has 36 instructions in total. They're pretty straightforward to implement but can get VERY tedious. I won't talk about them here because there's plenty of information out there about the implementations like [Austin Morlan's blog]() and [THE go-to CHIP8 reference]().
+At its core, the CPU is really just a glorified calculator waiting for people to tell it what to do. As such, we need a contract to tell the rest of the world what the CPU is capable of, and what you can ask of it. This is done through an `Instruction Set Architecture` commonly referred to as an `ISA`. It just defines some methods that you're allowed to tell the CPU do. CHIP8 has 36 instructions in total. They're pretty straightforward to implement but can get VERY tedious. I won't talk about them here because there's plenty of information out there about the implementations like [Austin Morlan's blog](https://austinmorlan.com/posts/chip8_emulator/) and [THE go-to CHIP8 reference](http://devernay.free.fr/hacks/chip8/C8TECH10.HTM#3.1).
 
 #### Graphics and Rendering
 Before we talk about the actual rendering, let's take a quick look at the draw instruction
@@ -385,5 +382,9 @@ public start(clockSpeed: number, newKeyBindings?:{ [keyCode: string]: string } )
 ``` 
 
 #### React
-As always, I don't really feel about writing about the React code because I didn't think it was very interesting. It was just kinda standard React stuff that I messed around with to get it looking the way I want it to. One thing that I would like to note is that I used [React95]() components because I think it suits the A E S T H E T I C. 
+As always, I don't really feel about writing about the React code because I didn't think it was very interesting. It was just kinda standard React stuff that I messed around with to get it looking the way I want it to. One thing that I would like to note is that I used [React95](https://github.com/React95/React95) components because I think it suits the A E S T H E T I C. 
 
+### References
+- [Austin Morlan's Blog](https://austinmorlan.com/posts/chip8_emulator/)
+- [Cowgod's CHIP8 Reference](http://devernay.free.fr/hacks/chip8/C8TECH10.HTM)
+- [Tania Rascia's write up](https://www.taniarascia.com/writing-an-emulator-in-javascript-chip8/)
