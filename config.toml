@@ -1,0 +1,40 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "Malaysian Sensation"
+theme = "anatole"
+
+[params]
+title = "Hi, I'm Richmond"
+author = "Richmond Liew"
+description = "I wanna be the very best like no one ever was..."
+profilePicture = "images/profile.jpg"
+
+[menu]
+
+  [[menu.main]]
+  name = "Projects"
+  identifier = "home"
+  weight = 100
+  url = "/"
+
+  [[menu.main]]
+  name = "About"
+  weight = 300
+  identifier = "about"
+  url = "/about/"
+
+
+[[params.socialIcons]]
+icon = "fab fa-linkedin"
+title = "Linkedin"
+url = "https://www.linkedin.com/in/richmond-liew/"
+
+[[params.socialIcons]]
+icon = "fab fa-github"
+title = "GitHub"
+url = "https://github.com/liewrichmond"
+
+[[params.socialIcons]]
+icon = "fas fa-envelope"
+title = "e-mail"
+url = "mailto:richmond.liew.97@gmail.com"
