@@ -38,3 +38,9 @@ url = "https://github.com/liewrichmond"
 icon = "fas fa-envelope"
 title = "e-mail"
 url = "mailto:richmond.liew.97@gmail.com"
+
+[[params.socialIcons]]
+icon = "fas fa-file"
+title = "e-mail"
+url = "/docs/RichmondLiewResume.pdf"
+
